@@ -1,7 +1,8 @@
+import 'package:boba_meet/map_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MapPage());
 }
 
 class MyApp extends StatelessWidget {
