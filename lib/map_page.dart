@@ -21,8 +21,10 @@ class _MapPageState extends State<MapPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(icon:Icon(Icons.arrow_back),
+            onPressed:() => Navigator.pop(context, false),
+          ),
           title: Text('Select Range'),
-          backgroundColor: Colors.green[700],
         ),
         body: Column(
           children: [
