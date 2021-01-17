@@ -11,6 +11,20 @@ class _MapPageState extends State<MapPage> {
 
   final LatLng _center = const LatLng(34.4133, -119.8610);
   double _currentSliderValue = 600;    // feet
+  Set<Circle> circles;
+
+  @override
+  void initState() {
+    circles = Set.from([Circle(
+      circleId: CircleId("map_circle"),
+      center: _center,
+      fillColor: Color.fromARGB(30, 0xBB, 0xDE, 0xFB),
+      strokeColor: Colors.blue,
+      strokeWidth: 4,
+      radius: _currentSliderValue,
+    )]);
+    super.initState();
+  }
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -36,6 +50,7 @@ class _MapPageState extends State<MapPage> {
                   target: _center,
                   zoom: 13.0,
                 ),
+                circles: circles,
               ),
             ),
             Container(
