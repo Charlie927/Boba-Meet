@@ -10,7 +10,7 @@ class _MapPageState extends State<MapPage> {
   GoogleMapController mapController;
 
   final LatLng _center = const LatLng(34.4133, -119.8610);
-  double _currentSliderValue = 600;    // feet
+  double _currentSliderValue = 150;    // feet
   Set<Circle> circles;
 
   @override
@@ -20,7 +20,7 @@ class _MapPageState extends State<MapPage> {
       center: _center,
       fillColor: Color.fromARGB(30, 0xBB, 0xDE, 0xFB),
       strokeColor: Colors.blue,
-      strokeWidth: 4,
+      strokeWidth: 2,
       radius: _currentSliderValue,
     )]);
     super.initState();
@@ -48,7 +48,7 @@ class _MapPageState extends State<MapPage> {
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: CameraPosition(
                   target: _center,
-                  zoom: 13.0,
+                  zoom: 16.0,
                 ),
                 circles: circles,
               ),
